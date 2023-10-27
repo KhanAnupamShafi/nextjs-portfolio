@@ -4,7 +4,7 @@
 
 :root {
   --site-theme-light: #01d293;
-  --site-theme-dark: #145441;
+  --site-theme-dark: #2ec094;
 }
 
 
@@ -29,4 +29,8 @@
     background-size: 100% 3px;
     background-position: 0 100%;
   }
+}
+
+html {
+  overflow-x: initial !important;
 }

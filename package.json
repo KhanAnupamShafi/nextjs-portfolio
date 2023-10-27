@@ -19,7 +19,8 @@
     "prisma": "^5.5.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-simple-typewriter": "^5.0.1"
+    "react-simple-typewriter": "^5.0.1",
+    "tailwind-scrollbar": "^3.0.5"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",

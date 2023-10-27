@@ -122,7 +122,7 @@ const Header = () => {
                     <div
                       onClick={() => go(link.href)}
                       id={link.id}
-                      className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4">
+                      className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4 dark:text-white">
                       {link.text}
                     </div>
                   </li>

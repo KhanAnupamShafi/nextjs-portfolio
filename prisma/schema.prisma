@@ -11,6 +11,7 @@ generator client {
 model Guestbook {
   id         Int      @id @default(autoincrement()) @db.UnsignedInt
   email      String   @db.VarChar(256)
+  subject    String?  @db.VarChar(256)
   body       String   @db.VarChar(500)
   username   String   @db.VarChar(256)
   created_at DateTime @default(now()) @db.DateTime(6)

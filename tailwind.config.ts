@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         theme: {
           light: 'var(--site-theme-light)',
-          dark: 'var(--color-theme-dark)',
+          dark: 'var(--site-theme-dark)',
           // and so on...
         },
       },
@@ -26,6 +26,7 @@ const config: Config = {
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
+    require('tailwind-scrollbar'),
   ],
 };
 export default config;
