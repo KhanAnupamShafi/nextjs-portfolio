@@ -1,11 +1,5 @@
 ![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards)
 
-<style>
-  ul {
-    list-style: none;
-  }
-</style>
-
 - **Framework**:
   <p align="center">
     <b>NextJS</b><br>
