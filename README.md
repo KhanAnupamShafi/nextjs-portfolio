@@ -1,40 +1,51 @@
 ![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards)
 
-- **Framework**: <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-<b>NextJS</b>
-<img src="./public/nextdotjs.svg" alt="Next.js" width="40" title="Title">
-</div>
+<style>
+  ul {
+    list-style: none;
+  }
+</style>
 
-- **CMS**: <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-<b>Sanity</b>
-<img src="./public/sanity.svg" alt="Next.js" width="40" title="Title">
-</div>
+- **Framework**:
+  <p align="center">
+    <b>NextJS</b><br>
+    <img src="./public/nextdotjs.svg" alt="Next.js" width="40" title="Title">
+  </p>
 
-- **ORM**: <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-<b>Prisma</b>
-<img src="./public/prisma.svg" alt="Next.js" width="40" title="Title">
-</div>
+- **CMS**:
+  <p align="center">
+    <b>Sanity</b><br>
+    <img src="./public/sanity.svg" alt="Next.js" width="40" title="Title">
+  </p>
+
+- **ORM**:
+  <p align="center">
+    <b>Prisma</b><br>
+    <img src="./public/prisma.svg" alt="Next.js" width="40" title="Title">
+  </p>
 
 - **Database**:
-<div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-  <p><b>PlanetScale</b>
+  <p align="center">
+    <b>PlanetScale</b><br>
     <img src="./public/planetscale.svg" alt="Next.js" width="40" title="Title">
   </p>
-  <p><b>MySQL</b>
+  <p align="center">
+    <b>MySQL</b><br>
     <img src="./public/mysql.svg" alt="Next.js" width="40" title="Title">
   </p>
-</div>
 
-- **Styling**: <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-  <p><b>TailwindCSS</b>
+- **Styling**:
+  <p align="center">
+    <b>TailwindCSS</b><br>
     <img src="./public/tailwindcss.svg" alt="Next.js" width="40" title="Title">
   </p>
-  <p><b>MySQL</b>
+  <p align="center">
+    <b>Headless UI</b><br>
     <img src="./public/headlessui.svg" alt="Next.js" width="40" title="Title">
   </p>
-</div>
 
-- **Deployment**: <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-<b>Vercel</b>
-<img src="./public/vercel.svg" alt="Next.js" width="40" title="Title">
-</div>
+- **Deployment**:
+  <p align="center">
+    <b>Vercel</b><br>
+    <img src="./public/vercel.svg" alt="Next.js" width="40" title="Title">
+  </p>
