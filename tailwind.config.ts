@@ -6,9 +6,23 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-noto-sans)'],
+        mono: ['var(--font-alegreya-sans)'],
+      },
+      colors: {
+        theme: {
+          light: 'var(--site-theme-light)',
+          dark: 'var(--color-theme-dark)',
+          // and so on...
+        },
+      },
+    },
   },
+
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),

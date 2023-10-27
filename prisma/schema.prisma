@@ -1,0 +1,18 @@
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Guestbook {
+  id         Int      @id @default(autoincrement()) @db.UnsignedInt
+  email      String   @db.VarChar(256)
+  body       String   @db.VarChar(500)
+  username   String   @db.VarChar(256)
+  created_at DateTime @default(now()) @db.DateTime(6)
+  updated_at DateTime @default(now()) @db.DateTime(6)
+}
