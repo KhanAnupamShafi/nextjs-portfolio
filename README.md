@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards)
 
-## Getting Started
+- **Framework**: <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+<b>NextJS</b>
+<img src="./public/nextdotjs.svg" alt="Next.js" width="40" title="Title">
+</div>
 
-First, run the development server:
+- **CMS**: <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+<b>Sanity</b>
+<img src="./public/sanity.svg" alt="Next.js" width="40" title="Title">
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **ORM**: <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+<b>Prisma</b>
+<img src="./public/prisma.svg" alt="Next.js" width="40" title="Title">
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Database**:
+<div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+  <p><b>PlanetScale</b>
+    <img src="./public/planetscale.svg" alt="Next.js" width="40" title="Title">
+  </p>
+  <p><b>MySQL</b>
+    <img src="./public/mysql.svg" alt="Next.js" width="40" title="Title">
+  </p>
+</div>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Styling**: <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+  <p><b>TailwindCSS</b>
+    <img src="./public/tailwindcss.svg" alt="Next.js" width="40" title="Title">
+  </p>
+  <p><b>MySQL</b>
+    <img src="./public/headlessui.svg" alt="Next.js" width="40" title="Title">
+  </p>
+</div>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Deployment**: <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+<b>Vercel</b>
+<img src="./public/vercel.svg" alt="Next.js" width="40" title="Title">
+</div>
