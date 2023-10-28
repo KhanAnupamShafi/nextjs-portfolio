@@ -14,4 +14,14 @@ const builder = imageUrlBuilder(client);
 
 export const clientFetch = cache(client.fetch.bind(client));
 
-export const urlFor = (source: any) => builder.image(source);
+export const urlFor = (source: any) => {
+  if (source) {
+    return builder.image(source);
+  }
+
+  // Handle the case when source is undefined
+  // You can return a default image URL or an empty string, for example.
+  return builder.image(
+    'image-4a97235c619c96e7a93a2ab2854ba69f6b4303b9-750x450-jpg'
+  );
+};

@@ -4,11 +4,40 @@ import { Disclosure } from '@headlessui/react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import MobileMenuBar from './MobileMenuBar';
 import Themebutton from './ui/ThemeButton';
 const Header = () => {
   let pathname = usePathname() || '/';
   const router = useRouter();
+
+  const [scrolling, setScrolling] = useState(false); // State to track scrolling
+  const [className, setClassName] = useState(
+    'z-30 border-y sticky top-0 duration-300 lg:text-xl'
+  );
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 99) {
+        setScrolling(true);
+        setClassName(
+          'z-30 border-y sticky hidden lg:block top-0 z-50 shadow-md bg-white dark:bg-black bg-opacity-70 backdrop-blur border-none duration-300'
+        );
+      } else {
+        setScrolling(false);
+        setClassName(
+          'z-30 border-y sticky top-0 duration-300 lg:text-xl'
+        );
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const NavLinks = [
     {
       href: '/',
@@ -49,10 +78,10 @@ const Header = () => {
   }
 
   return (
-    <Disclosure as="nav">
+    <Disclosure as="nav" className={className}>
       {({ open }) => (
         <>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div className="flex justfiy-between h-16">
               <div className="flex justify-between w-full">
                 <div className="flex items-center">

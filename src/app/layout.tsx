@@ -31,9 +31,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${alegreya.variable} ${noto.variable} bg-white text-black dark:bg-[#0e1630] dark:text-white  selection:bg-gray-50 dark:selection:bg-gray-800 overflow-y-hidden`}>
+        className={`${alegreya.variable} ${noto.variable} bg-white text-black dark:bg-[#0e1630] dark:text-white  selection:bg-gray-50 dark:selection:bg-gray-800 `}>
         <Providers>
-          <Header />
+          <div className="w-full md:fixed z-50 dark:bg-[#0e1630] bg-white">
+            <div className="left-0 top-0">
+              <Header />
+            </div>
+          </div>
           {children}
         </Providers>
       </body>
