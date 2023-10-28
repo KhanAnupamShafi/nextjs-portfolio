@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Alegreya, Noto_Sans } from 'next/font/google';
 import Header from './components/Header';
@@ -36,6 +37,7 @@ export default function RootLayout({
           {children}
         </Providers>
       </body>
+      <Analytics />
     </html>
   );
 }

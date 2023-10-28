@@ -14,7 +14,7 @@ export async function postEntry(formData: MyFormData) {
       email: formData.email as string,
     },
   });
-  return { success: true, data: data };
 
   revalidatePath('/guestbook');
+  return { success: true, data: data };
 }

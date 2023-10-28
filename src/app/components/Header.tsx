@@ -23,7 +23,7 @@ const Header = () => {
       transitionDelay: '175ms',
     },
     {
-      href: '/projects',
+      href: '/my-projects',
       text: 'Projects',
       id: 'nav-projects',
       transitionDelay: '200ms',
