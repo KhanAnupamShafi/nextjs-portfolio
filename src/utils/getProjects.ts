@@ -7,7 +7,6 @@ async function getProjects() {
 
   const query = groq`*[_type == "project"]{
   ...,
-    "urlImage": image.asset->url,
   technologies[]->
 }`;
 

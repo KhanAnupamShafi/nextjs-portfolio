@@ -1,3 +1,4 @@
+import { urlFor } from '@/lib/sanityClient';
 import getProjects from '@/utils/getProjects';
 import Image from 'next/image';
 
@@ -10,9 +11,12 @@ const getData = async () => {
 };
 
 export const revalidate = 15;
+type Props = {
+  projects: Project[];
+};
 
 const MyProjectsPage = async () => {
-  const { projects } = await getData();
+  const { projects }: Props = await getData();
   return (
     <div className="divide-y divide-gray-200 dark:divide-gray-700">
       <div className="flex flex-col items-center justify-center space-y-2 pt-6 pb-8 md:space-y-5 max-w-sm">
@@ -31,7 +35,7 @@ const MyProjectsPage = async () => {
             <div className="h-56 w-full relative">
               <Image
                 fill
-                src={project.urlImage}
+                src={urlFor(project.image).url()}
                 alt="Image of the project"
                 className="w-full h-full object-cover"
               />
