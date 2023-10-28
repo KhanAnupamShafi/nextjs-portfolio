@@ -21,7 +21,7 @@ const Header = () => {
       if (scrollPosition > 99) {
         setScrolling(true);
         setClassName(
-          'z-30 border-y sticky hidden lg:block top-0 z-50 shadow-md bg-white dark:bg-black bg-opacity-70 backdrop-blur border-none duration-300'
+          'z-30 border-y sticky hidden lg:block top-0 z-50 shadow-md bg-white dark:bg-[#291720] bg-opacity-20 backdrop-blur-sm border-none duration-300'
         );
       } else {
         setScrolling(false);

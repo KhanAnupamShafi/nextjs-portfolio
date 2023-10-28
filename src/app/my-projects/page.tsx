@@ -31,43 +31,53 @@ const MyProjectsPage = async () => {
 
         <div className="grid gap-y-8 sm:gap-6  sm:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-10 pt-8">
           {projects.map((project) => (
-            <>
-              {console.log(urlFor(project?.image).url())}
-              <article
-                key={project._id}
-                className="overflow-hidden dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-indigo-800 shadow-teal-100">
-                <div className="h-56 w-full relative">
-                  <Image
-                    fill
-                    src={urlFor(project?.image).url() || DemoImg}
-                    alt="Image of the project"
-                    className="w-full h-full object-cover"
-                  />
+            <article
+              key={project._id}
+              className="overflow-hidden relative dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-[#291720] bg-opacity-10 dark:shadow-[#291720] shadow-teal-100">
+              <div className="h-56 w-full relative">
+                <Image
+                  fill
+                  src={urlFor(project?.image).url() || DemoImg}
+                  alt="Image of the project"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="p-4 sm:p-6">
+                <a href={project.link} target="_blank">
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                    {project.title}
+                  </h3>
+                </a>
+
+                <p className=" line-clamp-3 mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+                  {project.overview} Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Eum dolores quo iste
+                  atque porro dolorum praesentium error accusamus,
+                  ullam hic eos iure vero mollitia. Voluptatum aliquid
+                  corrupti dicta cupiditate quia.
+                </p>
+
+                <div className="bg-transparent bottom-5 flex flex-wrap pt-5">
+                  {project?.technologies?.map((tech) => (
+                    <div
+                      key={tech?._id}
+                      className="px-1.5 py-1 mr-2 dark:text-white bg-[#808dad68] rounded-md my-0.5">
+                      {tech.title}
+                    </div>
+                  ))}
                 </div>
-
-                <div className="p-4 sm:p-6">
-                  <a href={project.link} target="_blank">
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                      {project.title}
-                    </h3>
-                  </a>
-
-                  <p className=" line-clamp-3 mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-                    {project.overview}
-                  </p>
-
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-500">
-                    Learn More!
-                    <span className="block transition-all group-hover:ms-0.5">
-                      &rarr;
-                    </span>
-                  </a>
-                </div>
-              </article>
-            </>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  className="relative group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-500">
+                  Learn More!
+                  <span className="block transition-all group-hover:ms-0.5">
+                    &rarr;
+                  </span>
+                </a>
+              </div>
+            </article>
           ))}
         </div>
       </div>

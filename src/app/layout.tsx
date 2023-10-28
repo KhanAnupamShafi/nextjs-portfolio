@@ -1,8 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Alegreya, Noto_Sans } from 'next/font/google';
-import Header from './components/Header';
-import { Providers } from './components/Provider';
+import WrapperClient from './components/WrapperClient';
 import './globals.css';
 
 const noto = Noto_Sans({
@@ -32,14 +31,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${alegreya.variable} ${noto.variable} bg-white text-black dark:bg-[#0e1630] dark:text-white  selection:bg-gray-50 dark:selection:bg-gray-800 `}>
-        <Providers>
-          <div className="w-full md:fixed z-50 dark:bg-[#0e1630] bg-white">
-            <div className="left-0 top-0">
-              <Header />
-            </div>
-          </div>
-          {children}
-        </Providers>
+        <WrapperClient>{children}</WrapperClient>
       </body>
       <Analytics />
     </html>
