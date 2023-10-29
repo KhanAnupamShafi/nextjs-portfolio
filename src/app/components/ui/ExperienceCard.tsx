@@ -6,7 +6,7 @@ const defaultOptions = {
   reverse: false, // reverse the tilt direction
   max: 35, // max tilt rotation (degrees)
   perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
-  scale: 0.9, // 2 = 200%, 1.5 = 150%, etc..
+  scale: 0.95, // 2 = 200%, 1.5 = 150%, etc..
   speed: 1000, // Speed of the enter/exit transition
   transition: true, // Set a transition on enter/exit.
   axis: null, // What axis should be disabled. Can be X or Y.
@@ -22,17 +22,19 @@ const ExperienceCard = ({ experience }: Props) => {
     <Tilt
       options={defaultOptions}
       style={{
+        transition: 'all',
+        duration: '5500ms',
         transform:
           'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',
       }}>
-      <div className="my-4 mx-8 lg:mx-16 rounded-2xl transition-all duration-300 transform hover:opacity-80 hover:shadow-violet-5xl">
+      <div className="my-4 mx-8 lg:mx-16 rounded-2xl transition-all duration-300 transform hover:opacity-80 hover:shadow-violet-4xl">
         <article className="flex flex-col rounded-lg items-center space-y-4 sm:space-y-5 flex-shrink-0 w-full lg:w-[800px] xl:w-[850px] snap-center bg-[#FAEBEFFF] dark:bg-[#343148FF] p-5 opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
           <motion.img
             initial={{
               y: -100,
               opacity: 0,
             }}
-            transition={{ duration: 1.2 }}
+            transition={{ duration: 2.2 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="w-20 h-20 rounded-full xl:w-32 xl:h-32 object-cover"
@@ -91,7 +93,7 @@ const ExperienceCard = ({ experience }: Props) => {
                 key={technology._id}
                 width={500}
                 height={500}
-                className="h-8 w-8 object-contain sm:h-10 sm:w-10 lg:w-12 lg:h-12 rounded-full"
+                className="h-8 w-8 object-contain sm:h-10 sm:w-10 lg:w-12 lg:h-12 rounded-full bg-white p-1"
                 src={urlFor(technology.image).url()}
                 alt={technology.title}
               />

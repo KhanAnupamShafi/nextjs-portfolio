@@ -34,7 +34,20 @@
   }
 }
 
+/* animation*/
+@keyframes bounce-left-to-right {
 
+  0%,
+  100% {
+    transform: translateX(-10px);
+    /* Initial position (left) */
+  }
+
+  50% {
+    transform: translateX(10px);
+    /* Bounce to the right */
+  }
+}
 
 /* Default container styles */
 .container,

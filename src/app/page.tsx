@@ -1,25 +1,31 @@
 import getMyExperience from '@/utils/getMyExperience';
 import getMyInfo from '@/utils/getMyInfo';
 import getProjects from '@/utils/getProjects';
+import getMySkills from '@/utils/getSkills';
 import About from './components/About';
 import ContactMe from './components/Contact';
 import Experience from './components/Experience';
 import Featured from './components/Featured';
 import Hero from './components/Hero';
+import Skill from './components/Skill';
 
 const getData = async () => {
   const projects = await getProjects();
   const info = await getMyInfo();
   const exp = await getMyExperience();
+  const skills = await getMySkills();
 
   return {
     projects,
     info,
     exp,
+    skills,
   };
 };
+
+export const revalidate = 15;
 export default async function Home() {
-  const { projects, info, exp } = await getData();
+  const { projects, info, exp, skills } = await getData();
   console.log(info);
 
   return (
@@ -34,6 +40,9 @@ export default async function Home() {
         </section>
         <section id="experience" className="snap-start">
           <Experience experiences={exp} />
+        </section>
+        <section id="skills" className="snap-start">
+          <Skill skills={skills} />
         </section>
         <section id="projects" className="snap-start">
           <Featured projects={projects} />

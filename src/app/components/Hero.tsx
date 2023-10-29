@@ -1,10 +1,13 @@
 'use client';
 
-import { Cursor } from 'react-simple-typewriter';
-// import { urlFor } from "@/sanity";
 import { urlFor } from '@/lib/sanityClient';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import { Cursor } from 'react-simple-typewriter';
+import Arrow from '../../assets/arrows-right.svg';
+import Box from '../../assets/boxes.svg';
+import Circle from '../../assets/circle-spin.svg';
+import Rocket from '../../assets/headout.svg';
 import TypeWriter from './TypeWriter';
 import BackgroundCircles from './ui/BackgroundCircle';
 type Props = {
@@ -34,7 +37,7 @@ const Hero = ({ info }: Props) => {
         <div className='className="absolute -right-16 md:-right-64 top-52 md:top-0 lg:bottom-36 w-1/3 2xl:w-1/4 pointer-events-none'>
           <Image
             className="animate-spin"
-            src="https://harshgoel.me/images/vectors/circle-spin.svg"
+            src={Circle}
             alt="Circle Vector"
             fill
           />
@@ -42,25 +45,32 @@ const Hero = ({ info }: Props) => {
         <div className="ml-4 sm:mx-12 md:mx-16 grid grid-cols-12 gap-4 h-auto place-items-center items-center">
           <div className="col-span-12 md:col-span-7 lg:col-span-6 flex flex-col justify-center items-center">
             <div className="items-center w-3/4 relative">
-              <div className='className="block absolute right-0 top-0 w-20 md:w-16 lg:w-52 opacity-60"'>
+              <div className="block  w-20 md:w-16 lg:w-20 opacity-100">
                 <Image
-                  src="https://harshgoel.me/images/vectors/boxes.svg"
+                  className="!relative w-full"
+                  src={Box}
                   alt="Box Vector"
                   fill
+                  color="red"
                 />
               </div>
 
               <div className="sm:ml-52 xl:ml-96">
-                <a href="/work">
-                  <div className="w-14 mt-10 sm:mt-0 transform-all animate-translateright">
-                    <Image
-                      className="transform translate-y-[100%] translate-x-[2%] "
-                      src="https://harshgoel.me/images/vectors/arrows-right.svg"
-                      alt="Next"
-                      fill
-                    />
-                  </div>
-                </a>
+                <motion.div
+                  className="hidden lg:block w-0 lg:mt-2 xl:mt-1 sm:mt-0 transform-all"
+                  initial={{ y: -200, opacity: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 1.2 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}>
+                  <Image
+                    className="hidden lg:block  lg:mt-24 xl:mt-1 sm:mt-0 transform-all animate-translateright"
+                    src={Arrow}
+                    alt="Next"
+                    fill
+                  />
+                </motion.div>
               </div>
             </div>
           </div>
@@ -68,7 +78,7 @@ const Hero = ({ info }: Props) => {
             <div className="w-[10px]  p-10 sm:p-24 md:p-4 lg:p-24">
               <Image
                 className="w-5 scale-y-[0.47] scale-x-[0.6] animate-pulse left-0 top-0 p-10 sm:p-36 md:p-4 lg:p-24 mr-24 transform -translate-y-[44%] -translate-x-[2%] -rotate-12 -z-0"
-                src="https://harshgoel.me/images/companies/headout.svg"
+                src={Rocket}
                 alt="Works at"
                 fill
               />
