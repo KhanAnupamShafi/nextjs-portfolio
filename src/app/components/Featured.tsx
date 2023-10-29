@@ -36,14 +36,12 @@ const Featured = ({ projects }: Props) => {
   const [ref, inView] = useInView();
   useEffect(() => {
     if (inView) {
-      // You can customize the animation properties here
       controls.start({
         opacity: 1,
         y: 0,
         transition: { duration: 1.2 },
       });
     } else {
-      // Animation when the element is not in view
       controls.start({ opacity: 0, y: -200 });
     }
   }, [inView, controls]);
@@ -70,7 +68,15 @@ const Featured = ({ projects }: Props) => {
           effect={'coverflow'}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={3}
+          slidesPerView={1} // Display only one slide on mobile
+          breakpoints={{
+            640: {
+              slidesPerView: 2, // Display one slide on screens wider than 640px
+            },
+            768: {
+              slidesPerView: 3, // Display three slides on screens wider than 768px
+            },
+          }}
           initialSlide={1}
           loop={true}
           navigation={{

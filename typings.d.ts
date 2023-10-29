@@ -13,37 +13,36 @@ interface Image {
   };
 }
 
-interface PageInfo extends SanityBody {
-  _type: 'pageInfo';
-  address: string;
-  backgroundInformation: string;
-  email: string;
-  role: string;
-  heroImage: Image;
-  name: string;
-  phoneNumber: string;
-  profilePic: Image;
-}
-
 interface Skill extends SanityBody {
   _type: 'skill';
   image: Image;
   progress: number;
   title: string;
 }
-
-interface Experience extends SanityBody {
-  _type: 'experience';
-  company: string;
-  companyImage: Image;
-  dateStarted: Date;
-  dateEnded: Date;
-  isCurrentlyWorkingHere: boolean;
-  jobTitle: string;
-  points: string[];
-  technologies: Skill[];
+interface ExperienceDetails {
+  projects: ExperienceProject[];
+  point: string[]; // Array of points
 }
 
+interface ExperienceProject {
+  _key: string;
+  projectDescription: string;
+  projectName: string;
+}
+
+// Updated Experience interface
+interface Experience extends SanityBody {
+  _type: 'experience';
+  technologies: Skill[];
+  companyImage: Image;
+  dateStarted: string;
+  dateEnded: string;
+  isCurrentlyWorkingHere: boolean;
+  jobTitle: string;
+  companyTitle: string;
+  companyLocation: string;
+  experienceDetails: ExperienceDetails;
+}
 interface Project extends SanityBody {
   title: string;
   _type: 'project';
@@ -53,8 +52,24 @@ interface Project extends SanityBody {
   technologies: Skill[];
 }
 
-interface Social extends SanityBody {
-  _type: 'social';
+interface SocialLink {
+  _type: 'link';
+  _key: string;
   title: string;
   url: string;
+  icon: Image;
+  isVisible: boolean;
+}
+
+interface MyPageInfo extends SanityBody {
+  _type: 'personalInfo';
+  address: string;
+  backgroundInformation: string;
+  email: string;
+  role: string;
+  heroImage: Image;
+  name: string;
+  phoneNumber: string;
+  profilePic: Image;
+  socials: SocialLink[];
 }
