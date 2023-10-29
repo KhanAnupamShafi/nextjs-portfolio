@@ -2,11 +2,6 @@
 
 // import Swiper and modules styles
 
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';
-import '../globals.css';
-
 import { urlFor } from '@/lib/sanityClient';
 import {
   motion,
