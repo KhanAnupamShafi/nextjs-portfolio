@@ -26,7 +26,6 @@ const getData = async () => {
 export const revalidate = 15;
 export default async function Home() {
   const { projects, info, exp, skills } = await getData();
-  console.log(info);
 
   return (
     <div className="overflow-hidden relative">
