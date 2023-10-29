@@ -1,9 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'swiper/css';
-@import 'swiper/css/effect-coverflow';
-@import 'swiper/css/navigation';
+
 
 :root {
   --site-theme-light: #01d293;

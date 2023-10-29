@@ -1,6 +1,9 @@
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Alegreya, Noto_Sans } from 'next/font/google';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
 import WrapperClient from './components/WrapperClient';
 import './globals.css';
 
