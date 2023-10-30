@@ -1,9 +1,19 @@
 'use client';
+import { urlFor } from '@/lib/sanityClient';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Img from '../../assets/about.png';
+import Link from 'next/link';
 import Triangle from '../../assets/triangle.svg';
-const About = () => {
+type Props = {
+  info: MyPageInfo[];
+};
+
+const About = ({ info }: Props) => {
+  const myInfo = info[0] || [];
+  const resume = myInfo?.socials?.find(
+    (item) => item.title === 'Resume'
+  );
+  console.log(resume);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -44,24 +54,29 @@ const About = () => {
                 </button>
               </div>
               <div className="sm:col-span-1 xl:col-span-1">
-                <button
-                  type="button"
-                  className="font-bold px-6 sm:px-4 xl:px-6 py-4 w-64 sm:w-52 md:w-56 2xl:w-60 text-sm 2xl:text-xl h-25 transition-all
-              rounded overflow-hidden border-2  hover:shadow-light-xl bg-transparent text-blue-200 hover:outline-none hover:bg-transparent hover:text-pink border-pink focus:outline-none
-             ">
-                  Download Resume
-                </button>
+                <Link href={resume?.url} download={'Khans Resume'}>
+                  <button
+                    type="button"
+                    className="font-bold px-6 sm:px-4 xl:px-6 py-4 w-64 sm:w-52 md:w-56 2xl:w-60 text-sm 2xl:text-xl h-25 transition-all
+               rounded overflow-hidden border-2  hover:shadow-light-xl bg-transparent text-blue-200 hover:outline-none hover:bg-transparent hover:text-pink border-pink focus:outline-none
+              ">
+                    Download Resume
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
         <div className="hidden md:flex md:col-span-5 lg:col-span-6 text-justify text-white items-center justify-start">
-          <div className="m-auto  pointer-events-none text-right">
-            <Image
-              src={Img}
-              alt="Harsh Goel"
-              className="w-100 lg:w-[450px] "
-            />
+          <div className="m-auto  pointer-events-none text-right h-[70%]">
+            <div className="lg:w-[450px] w-full h-full relative">
+              <Image
+                src={urlFor(myInfo.profilePic).url()}
+                alt="Anupam Shafi"
+                className=""
+                fill
+              />
+            </div>
           </div>
         </div>
       </div>

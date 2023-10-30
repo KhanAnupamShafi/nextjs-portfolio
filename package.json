@@ -10,6 +10,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@headlessui/react": "^1.7.17",
     "@prisma/client": "^5.5.2",
     "@sanity/image-url": "^1.0.2",

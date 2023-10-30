@@ -27,8 +27,8 @@ const Hero = ({ info }: Props) => {
       <BackgroundCircles />
 
       <Image
-        className="relative rounded-full h-40 w-32 mx-auto object-cover z-0"
-        height={420}
+        className="relative rounded-full h-40 w-40 mx-auto object-cover z-0"
+        height={400}
         width={400}
         src={urlFor(data?.heroImage).url()}
         alt="hero image"

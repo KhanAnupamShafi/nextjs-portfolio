@@ -52,11 +52,11 @@ interface Project extends SanityBody {
   technologies: Skill[];
 }
 
-interface SocialLink {
+interface SocialLink extends SanityBody {
   _type: 'link';
   _key: string;
   title: string;
-  url: string;
+  url: Url | string;
   icon: Image;
   isVisible: boolean;
 }

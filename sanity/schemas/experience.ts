@@ -60,7 +60,7 @@ export default defineType({
         {
           name: 'point',
           type: 'array',
-          of: [{type: 'text', rows: 1}],
+          of: [{type: 'text', rows: 4}],
           title: 'Point',
         },
         {

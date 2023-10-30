@@ -5,13 +5,13 @@ type Props = {
 };
 const SuccessToast = ({ children }: Props) => {
   return (
-    <div className="flex items-center bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md mb-2">
-      <div className="text-green-500 rounded-full bg-white mr-3">
+    <div className="fixed animate-bounce bottom-5 right-[2%] flex rounded-lg items-center bg-green-500 border-l-4 border-green-700 py-2 px-3 shadow-md mb-2">
+      <div className="text-green-500 rounded-full bg-white mr-3 ">
         <svg
           width="1.8em"
           height="1.8em"
           viewBox="0 0 16 16"
-          className="bi bi-check"
+          className="bi bi-check "
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg">
           <path

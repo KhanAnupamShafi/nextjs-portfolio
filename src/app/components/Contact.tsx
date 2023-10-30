@@ -1,7 +1,9 @@
 'use client';
 
 import { postEntry } from '@/utils/action';
+import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
+import Loader from './ui/Loader';
 import SuccessToast from './ui/SuccessToast';
 
 export type MyFormData = {
@@ -13,6 +15,7 @@ export type MyFormData = {
 
 const ContactMe = () => {
   const [showSuccess, setShowSuccess] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   const [formData, setFormData] = useState<MyFormData>({
     name: '',
@@ -20,8 +23,42 @@ const ContactMe = () => {
     subject: '',
     body: '',
   });
+  const emailData: {
+    name: string;
+    subject: string;
+    message: string;
+    reply_to: string;
+  } = {
+    name: formData.name,
+    subject: formData.subject || 'No Subject',
+    message: formData.body,
+    reply_to: formData.email,
+  };
 
   const formRef = useRef<HTMLFormElement>(null);
+
+  // console.log(emailData);
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(e);
+    if (formRef.current) {
+      emailjs
+        .send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_IDD!,
+          emailData,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        )
+        .then(
+          (result) => {
+            console.log(result);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
+  };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -35,11 +72,14 @@ const ContactMe = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoader(true);
     const result = await postEntry(formData);
-
+    console.log(result);
+    sendEmail(e);
     // Reset the form data to its initial state
     if (result.success) {
       setShowSuccess(true); // Show the success toast
+      setLoader(false);
       setFormData({
         name: '',
         email: '',
@@ -70,6 +110,7 @@ const ContactMe = () => {
 
           <div className="md:w-full">
             <form
+              ref={formRef}
               // onSubmit={onSubmit}
               onSubmit={handleSubmit}
               className="flex flex-col space-y-2 mx-auto text-emerald-600">
@@ -111,11 +152,15 @@ const ContactMe = () => {
                 className="contactInput"
                 required
               />
-              <button
-                type="submit"
-                className="bg-theme-light hover:bg-theme-dark py-5 px-10 rounded-md text-black font-bold text-lg">
-                Submit
-              </button>
+              {!loader ? (
+                <button
+                  type="submit"
+                  className="bg-theme-light hover:bg-theme-dark py-5 px-10 rounded-md text-black font-bold text-lg">
+                  Submit
+                </button>
+              ) : (
+                <Loader />
+              )}
               {showSuccess && (
                 <SuccessToast>Thank You !</SuccessToast>
               )}

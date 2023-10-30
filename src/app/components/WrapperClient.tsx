@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import { Providers } from './Provider';
+import SocialBar from './SocialBar';
 
 const WrapperClient = ({
   children,
@@ -14,6 +15,7 @@ const WrapperClient = ({
           <Header />
         </div>
       </div>
+      <SocialBar />
       {children}
     </Providers>
   );
