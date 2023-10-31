@@ -1,3 +1,4 @@
+import geFeaturedProjects from '@/utils/getFeatured';
 import getMyExperience from '@/utils/getMyExperience';
 import getMyInfo from '@/utils/getMyInfo';
 import getProjects from '@/utils/getProjects';
@@ -11,12 +12,14 @@ import Skill from './components/Skill';
 
 const getData = async () => {
   const projects = await getProjects();
+  const featured = await geFeaturedProjects();
   const info = await getMyInfo();
   const exp = await getMyExperience();
   const skills = await getMySkills();
 
   return {
     projects,
+    featured,
     info,
     exp,
     skills,
@@ -25,7 +28,7 @@ const getData = async () => {
 
 export const revalidate = 15;
 export default async function Home() {
-  const { projects, info, exp, skills } = await getData();
+  const { projects, info, exp, skills, featured } = await getData();
 
   return (
     <div className="overflow-hidden relative">
@@ -37,14 +40,14 @@ export default async function Home() {
         <section id="about" className="snap-start">
           <About info={info} />
         </section>
-        <section id="experience" className="snap-start">
+        <section id="experience" className="snap-start relative">
           <Experience experiences={exp} />
         </section>
         <section id="skills" className="snap-start">
           <Skill skills={skills} />
         </section>
-        <section id="projects" className="snap-start">
-          <Featured projects={projects} />
+        <section id="featured-projects" className="snap-start">
+          <Featured projects={featured} />
         </section>
 
         <section id="contact" className="snap-start">

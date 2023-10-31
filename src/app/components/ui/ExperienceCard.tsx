@@ -6,7 +6,7 @@ const defaultOptions = {
   reverse: false, // reverse the tilt direction
   max: 35, // max tilt rotation (degrees)
   perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
-  scale: 0.95, // 2 = 200%, 1.5 = 150%, etc..
+  scale: 0.96, // 2 = 200%, 1.5 = 150%, etc..
   speed: 1000, // Speed of the enter/exit transition
   transition: true, // Set a transition on enter/exit.
   axis: null, // What axis should be disabled. Can be X or Y.
@@ -27,8 +27,9 @@ const ExperienceCard = ({ experience }: Props) => {
         transform:
           'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',
       }}>
-      <div className="my-4 mx-8 lg:mx-16 rounded-2xl transition-all duration-300 transform hover:opacity-80 hover:shadow-violet-4xl">
-        <article className="flex flex-col rounded-lg items-center space-y-4 sm:space-y-5 flex-shrink-0 w-full lg:w-[800px] xl:w-[850px] snap-center bg-[#FAEBEFFF] dark:bg-[#343148FF] p-5 opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
+      {/* my-4 mx-8 lg:mx-16 rounded-2xl transition-all duration-300 transform hover:opacity-80 hover:shadow-violet-4xl */}
+      <div className="-z-0">
+        <article className="flex flex-col rounded-lg items-center space-y-4 sm:space-y-5 flex-shrink-0 w-full lg:w-[800px] xl:w-[750px] snap-center bg-[#B8C1EC] dark:bg-[#B8C1EC] p-5 opacity-90 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden dark:text-[#222]">
           <motion.img
             initial={{
               y: -100,
@@ -38,14 +39,14 @@ const ExperienceCard = ({ experience }: Props) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="w-20 h-20 rounded-full xl:w-32 xl:h-32 object-cover"
-            src={urlFor(experience.companyImage).url()}
+            src={urlFor(experience?.companyImage).url()}
           />
           <div className="ml-o text-start w-full ">
-            <h4 className="text-xl sm:text-2xl font-light text-[#333D79FF] dark:text-[#D7C49EFF]">
-              {experience.jobTitle}
+            <h4 className="text-xl sm:text-2xl font-light text-[#333D79FF] dark:text-[#434656]">
+              {experience?.jobTitle}
             </h4>
             <div className="flex justify-start gap-3">
-              <p className="font-bold text-base sm:text-base mt-1 flex align-middle items-center">
+              <p className="font-bold text-xs sm:text-base mt-1 flex align-middle items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#fff"
@@ -59,10 +60,10 @@ const ExperienceCard = ({ experience }: Props) => {
                     d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
                   />
                 </svg>
-                {experience.companyTitle}
+                {experience?.companyTitle}
               </p>
               |
-              <p className="font-bold text-base sm:text-base mt-1 flex align-middle items-center">
+              <p className="font-light text-xs sm:text-sm mt-1 flex align-middle items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -82,29 +83,29 @@ const ExperienceCard = ({ experience }: Props) => {
                   />
                 </svg>
 
-                {experience.companyLocation}
+                {experience?.companyLocation}
               </p>
             </div>
           </div>
 
           <div className="flex space-x-2 mt-2 w-full">
-            {experience?.technologies.map((technology) => (
+            {experience?.technologies?.map((technology) => (
               <Image
-                key={technology._id}
+                key={technology?._id}
                 width={500}
                 height={500}
                 className="h-8 w-8 object-contain sm:h-10 sm:w-10 lg:w-12 lg:h-12 rounded-full bg-white p-1"
-                src={urlFor(technology.image).url()}
-                alt={technology.title}
+                src={urlFor(technology?.image).url()}
+                alt={technology?.title}
               />
             ))}
           </div>
           <div className="w-full">
-            <p className="uppercase pb-5 text-sm text-[#333D79FF] dark:text-[#FDD20EFF]">
-              {new Date(experience.dateStarted).toDateString()} -{' '}
-              {experience.isCurrentlyWorkingHere
+            <p className="uppercase pb-5 text-sm text-[#333D79FF] ">
+              {new Date(experience?.dateStarted).toDateString()} -{' '}
+              {experience?.isCurrentlyWorkingHere
                 ? 'Present'
-                : new Date(experience.dateEnded).toDateString()}
+                : new Date(experience?.dateEnded).toDateString()}
             </p>
 
             <ul className="list-disc list-outside text-xs md:text-sm space-y-4 max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80">

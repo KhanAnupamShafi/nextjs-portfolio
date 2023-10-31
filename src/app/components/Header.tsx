@@ -42,31 +42,31 @@ const Header = () => {
     {
       href: '/',
       text: 'Home',
-      id: 'nav-home',
+      id: 'hero',
       transitionDelay: '150ms',
     },
     {
       href: '/about',
       text: 'About',
-      id: 'nav-about',
+      id: 'about',
       transitionDelay: '175ms',
     },
     {
       href: '/my-projects',
       text: 'Projects',
-      id: 'nav-projects',
+      id: 'featured-projects',
       transitionDelay: '200ms',
     },
     {
       href: '/blog',
       text: 'Blog',
-      id: 'nav-blog',
+      id: 'blog',
       transitionDelay: '250ms',
     },
     {
       href: '/guestbook',
       text: 'Guestbook',
-      id: 'nav-guestbook',
+      id: '/guestbook',
       transitionDelay: '275ms',
     },
   ];
@@ -95,21 +95,10 @@ const Header = () => {
                 </div>
 
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8 sm:items-center">
-                  {/* <Link
-                    href="/"
-                    prefetch
-                    className={`${
-                      pathname === '/'
-                        ? 'border-teal-500 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
-                        : 'border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
-                    }`}>
-                    Home
-                  </Link> */}
                   {NavLinks.map(({ href, text, id }) => (
                     <Link
                       key={id}
-                      href={`${href}`}
-                      id={id}
+                      href={href === '/blog' ? `/blog` : `/#${id}`}
                       className={clsx(
                         'invisible mr-1 text-gray-900  md:visible',
                         href === pathname ||

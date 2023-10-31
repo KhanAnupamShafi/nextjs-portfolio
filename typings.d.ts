@@ -47,9 +47,15 @@ interface Project extends SanityBody {
   title: string;
   _type: 'project';
   image: Image;
+  theme: any;
   link: string;
   overview: string;
   technologies: Skill[];
+  dateEnded: string;
+  frontend_link: string;
+  backend_link: string;
+  tagline: string;
+  gallery: Image[];
 }
 
 interface SocialLink extends SanityBody {
