@@ -24,11 +24,10 @@ export default async function ProjectPage({
   params: { ['project-id']: string };
 }) {
   const { projectInfo }: Props = await getData(params['project-id']);
-  console.log(projectInfo);
   // const projectDetails: Project[] = useContext(ProjectDetailsContext);
   return (
     <>
-      <div className="dark:bg-blue pt-0  md:pt-32 overflow-x-hidden">
+      <div className="dark:bg-blue pt-0 md:pt-32">
         <ProjectDetails data={projectInfo[0]} />
       </div>
     </>

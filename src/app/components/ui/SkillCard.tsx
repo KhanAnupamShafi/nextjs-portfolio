@@ -5,8 +5,6 @@ type Props = {
   skill: Skill;
 };
 const SkillCard = ({ skill }: Props) => {
-  console.log(urlFor(skill.image).url());
-
   return (
     <div className="relative group flex  cursor-pointer  ">
       <div className="h-16 sm:h-16 w-28 bg-white">

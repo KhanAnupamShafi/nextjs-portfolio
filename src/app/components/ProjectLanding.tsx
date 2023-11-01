@@ -2,8 +2,8 @@
 import { urlFor } from '@/lib/sanityClient';
 import Image from 'next/image';
 import { Tilt } from 'react-tilt';
+import CircleSVG from '../../assets/cylinder.svg';
 import Button from './ui/Button';
-
 type Props = {
   data: Project;
 };
@@ -16,22 +16,26 @@ const ProjectLanding = ({ data }: Props) => {
     backend_link,
     gallery,
   } = data || {};
-  console.log(urlFor(gallery[0]).url());
+  console.log(data);
   return (
     <>
-      <div className="p-4 grid grid-cols-12 gap-10 md:gap-0 mx-auto w-full mt-8 text-left lg:mt-0 md:text-left mb-10 md:mb-0">
-        <div className="order-last md:order-first col-span-12 md:col-span-6 lg:col-span-6 flex flex-col place-content-center items-center">
-          <div className="items-center w-3/4 -mt-10 relative">
-            <img
-              src="/images/vectors/triangle.svg"
-              alt="Triangle 3d Vector"
-              className="hidden md:block absolute right-0 top-0 w-2/3 md:w-32 animate-spin"
-            />
-            <h1 className="text-xl sm:text-2xl xl:text-3xl font-extrabold dark:text-white leading-none mb-2">
+      <div className=" grid grid-cols-12 mx-auto mt-8 text-left lg:mt-0 md:text-left mb-10 md:mb-0">
+        <div className="px-5 order-last xl:order-first col-span-12 lg:col-span-12 xl:col-span-6 flex flex-col place-items-center items-center w-[100vw]">
+          <div className="items-center pl-10 xl:pl-0 justify-center w-full 2xl:w-3/4 -mt-10 relative">
+            <div
+              className="relative h-auto py-10 lg:py-20 w-full"
+              id="skills">
+              <Image
+                src={CircleSVG}
+                alt="Cylinder Vector"
+                className="absolute right-0 top-16 sm:top-7 md:top-28 lg:bottom-7 w-2/3  pointer-events-none opacity-50 transition-all animate-absoluteright"
+              />
+            </div>
+            <h1 className="text-md sm:text-4xl xl:text-3xl font-extrabold dark:text-white leading-none mb-2">
               {title}
             </h1>
             {tagline && (
-              <h5 className="text-xl font-light dark:text-violet text-justify mt-4 mb-10">
+              <h5 className="sm:text-xl md:text-xl font-light dark:text-violet text-justify mt-4 mb-10">
                 {tagline}
               </h5>
             )}
@@ -43,32 +47,43 @@ const ProjectLanding = ({ data }: Props) => {
                     text="Visit Project"
                     onClickHandler={() => window.open(link, '_blank')}
                   />
-                </div>
-              )}
-              {frontend_link && (
-                <div className="sm:col-span-1 xl:col-span-1">
-                  <Button
-                    type="outlined"
-                    text="View on Github"
-                    onClickHandler={() =>
-                      window.open(frontend_link, '_blank')
-                    }
-                  />
+                  {frontend_link && (
+                    <div className="sm:col-span-1 xl:col-span-1 mt-2">
+                      <Button
+                        type="outlined"
+                        text="View on Github"
+                        onClickHandler={() =>
+                          window.open(frontend_link, '_blank')
+                        }
+                      />
+                    </div>
+                  )}
+                  {backend_link && (
+                    <div className="sm:col-span-1 xl:col-span-1">
+                      <Button
+                        type="outlined"
+                        text="API Server"
+                        onClickHandler={() =>
+                          window.open(backend_link, '_blank')
+                        }
+                      />
+                    </div>
+                  )}
                 </div>
               )}
             </div>
           </div>
         </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-6">
-          <Tilt className="Tilt" options={{ max: 25 }}>
+        <div className="col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-5">
+          <Tilt>
             <div
-              className="my-4 mx-8 md:m-0 lg:m-10 lg:mx-16 rounded-2xl
-            transition-all duration-300 transform hover:opacity-80 hover:shadow-violet-5xl">
-              <div className="w-full h-full ">
+              className="my-4 md:m-0 rounded-2xl px-10 md:px-5 pt-10 md:pt-2  justify-center
+            transition-all duration-300 transform hover:opacity-80 hover:shadow-violet-5xl w-full">
+              <div className="h-full justify-center">
                 <Image
                   src={urlFor(gallery[0])?.url()}
                   alt={title + ' ' + tagline}
-                  className="rounded-2xl !relative"
+                  className="rounded-2xl !relative "
                   fill
                 />
               </div>

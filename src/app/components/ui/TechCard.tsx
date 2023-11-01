@@ -10,7 +10,6 @@ export default function TechCard({
   heading,
   color,
 }: Props): JSX.Element {
-  console.log(img);
   return (
     <>
       <div className={`bg-${color}  rounded-lg p-2`}>

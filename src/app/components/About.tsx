@@ -13,7 +13,6 @@ const About = ({ info }: Props) => {
   const resume = myInfo?.socials?.find(
     (item) => item.title === 'Resume'
   );
-  console.log(myInfo);
   return (
     <motion.div
       initial={{ opacity: 0 }}

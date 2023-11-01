@@ -52,6 +52,11 @@ export default defineType({
       title: 'Backend Link',
     }),
     defineField({
+      name: 'video_link',
+      type: 'url',
+      title: 'Video Link',
+    }),
+    defineField({
       name: 'tagline',
       type: 'string',
       title: 'Tag Line',

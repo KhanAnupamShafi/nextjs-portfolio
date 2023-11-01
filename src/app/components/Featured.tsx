@@ -116,7 +116,7 @@ const Featured = ({ projects }: Props) => {
 
                 {animationComplete && (
                   <Link
-                    href={project.link}
+                    href={`/my-projects/${project._id}`}
                     target="_blank"
                     className="absolute flex items-center justify-center top-8 rounded-3xl overflow-hidden opacity-0 hover:opacity-100 bg-[#04A777]/60 transition-opacity duration-150 ease-in w-full h-full z-2 cursor-pointer">
                     <svg

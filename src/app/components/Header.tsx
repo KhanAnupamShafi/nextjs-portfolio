@@ -21,7 +21,7 @@ const Header = () => {
       if (scrollPosition > 99) {
         setScrolling(true);
         setClassName(
-          'z-30 border-y sticky hidden lg:block top-0 z-50 shadow-md bg-white dark:bg-[#291720] bg-opacity-20 backdrop-blur-sm border-none duration-300'
+          'z-30 border-y sticky hidden lg:block top-0 z-50 shadow-md bg-white dark:bg-[#191729] bg-opacity-20 backdrop-blur-sm border-none duration-300'
         );
       } else {
         setScrolling(false);
@@ -66,7 +66,7 @@ const Header = () => {
     {
       href: '/guestbook',
       text: 'Guestbook',
-      id: '/guestbook',
+      id: 'contact',
       transitionDelay: '275ms',
     },
   ];
@@ -87,8 +87,9 @@ const Header = () => {
                 <div className="flex items-center">
                   <Link href="/">
                     <h1 className="text-2xl font-medium">
-                      <span className="text-theme-light">K</span>han
-                      <span className="text-theme-light">A</span>nupam
+                      <span className="text-theme-light">K</span>han{' '}
+                      <span className="text-theme-light">A</span>
+                      nupam{' '}
                       <span className="text-theme-light">S</span>hafi
                     </h1>
                   </Link>
@@ -98,13 +99,15 @@ const Header = () => {
                   {NavLinks.map(({ href, text, id }) => (
                     <Link
                       key={id}
-                      href={href === '/blog' ? `/blog` : `/#${id}`}
+                      href={
+                        href === '/blog' ? `/my-projects` : `/#${id}`
+                      }
                       className={clsx(
                         'invisible mr-1 text-gray-900  md:visible',
                         href === pathname ||
                           (pathname?.startsWith('/blog') &&
                             href === '/blog')
-                          ? 'font-semibold dark:text-indigo-500'
+                          ? 'font-semibold dark:text-theme-light'
                           : 'dark:text-gray-100'
                       )}>
                       <span className="dark:link-underline link-underline-black py-1">
@@ -137,12 +140,13 @@ const Header = () => {
                         'font-semibold dark:text-indigo-500'
                     )}
                     style={{ transitionDelay: link.transitionDelay }}>
-                    <div
-                      onClick={() => go(link.href)}
+                    <a
+                      // onClick={() => router.push('/#about')}
+                      href="/#about"
                       id={link.id}
                       className="ml-4 flex w-auto p-1 pb-4 text-lg sm:p-4 dark:text-white">
                       {link.text}
-                    </div>
+                    </a>
                   </li>
                 ))}
               </ul>

@@ -54,6 +54,7 @@ interface Project extends SanityBody {
   dateEnded: string;
   frontend_link: string;
   backend_link: string;
+  video_link: string;
   tagline: string;
   gallery: Image[];
 }

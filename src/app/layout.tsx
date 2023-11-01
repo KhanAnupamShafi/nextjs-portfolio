@@ -1,23 +1,10 @@
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
-import { Alegreya, Noto_Sans } from 'next/font/google';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import WrapperClient from './components/WrapperClient';
 import './globals.css';
-
-const noto = Noto_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-noto-sans',
-  weight: '500',
-});
-const alegreya = Alegreya({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-alegreya-sans',
-});
 
 export const metadata: Metadata = {
   title: "Anupam's Portfolio",
@@ -33,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${alegreya.variable} ${noto.variable} bg-white text-black dark:bg-[#0e1630] dark:text-white  selection:bg-gray-50 dark:selection:bg-gray-800 `}>
+        className={` bg-white text-black dark:bg-[#0e1630] dark:text-white  selection:bg-gray-50 dark:selection:bg-gray-800 `}>
         <WrapperClient>{children}</WrapperClient>
       </body>
       <Analytics />

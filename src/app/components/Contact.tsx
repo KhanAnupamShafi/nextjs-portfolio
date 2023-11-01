@@ -3,6 +3,7 @@
 import { postEntry } from '@/utils/action';
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
+import Footer from './Footer';
 import Loader from './ui/Loader';
 import SuccessToast from './ui/SuccessToast';
 
@@ -40,7 +41,6 @@ const ContactMe = () => {
   // console.log(emailData);
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(e);
     if (formRef.current) {
       emailjs
         .send(
@@ -51,7 +51,7 @@ const ContactMe = () => {
         )
         .then(
           (result) => {
-            console.log(result);
+            // console.log(result);
           },
           (error) => {
             console.log(error.text);
@@ -74,7 +74,6 @@ const ContactMe = () => {
     e.preventDefault();
     setLoader(true);
     const result = await postEntry(formData);
-    console.log(result);
     sendEmail(e);
     // Reset the form data to its initial state
     if (result.success) {
@@ -94,8 +93,8 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="max-w-screen space-y-2 pt-5 pb-8">
-      <div className="h-screen relative flex flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
+    <div className="w-screen space-y-2 pt-5 pb-8">
+      <div className="h-full sm:h-[80vh] relative flex flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
         <h3 className="absolute top-1 sm:top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
           Contact
         </h3>
@@ -103,7 +102,7 @@ const ContactMe = () => {
         <div className="sm:mt-0 flex flex-col md:space-y-8 space-y-2">
           <h4 className="text-lg font-semibold text-center w-full my-10 flex gap-2 flex-col">
             I&apos;m ready to connect.
-            <span className="decoration-[#F7AB0A]/50 border border-x-4 p-1 ml-2">
+            <span className="decoration-[#F7AB0A]/50  border-x-4 p-1 ml-2">
               Let&apos;s have a chat
             </span>
           </h4>
@@ -168,6 +167,7 @@ const ContactMe = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
