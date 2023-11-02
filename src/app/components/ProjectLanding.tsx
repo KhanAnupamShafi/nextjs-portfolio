@@ -35,7 +35,7 @@ const ProjectLanding = ({ data }: Props) => {
               {title}
             </h1>
             {tagline && (
-              <h5 className="sm:text-xl md:text-xl font-light dark:text-violet text-justify mt-4 mb-10">
+              <h5 className="lg:w-[400px] sm:text-xl md:text-xl font-light dark:text-violet text-justify mt-4 mb-10">
                 {tagline}
               </h5>
             )}
