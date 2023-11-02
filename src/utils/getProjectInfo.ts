@@ -1,10 +1,9 @@
-'use server';
 import { clientFetch } from '@/lib/sanityClient';
 import { groq } from 'next-sanity';
 
 async function getProjectInfo(id: string) {
   // 'use server';
-  const query = groq`*[_type == "project" && _id == ${id}] {
+  const query = groq`*[_type == "project" && _id == "${id}"] {
   ...,technologies[]->
 }`;
 
