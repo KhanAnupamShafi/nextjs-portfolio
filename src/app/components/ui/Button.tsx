@@ -9,7 +9,7 @@ const Button = ({ text, type, onClickHandler }: Props) => {
       <button
         type="button"
         onClick={onClickHandler}
-        className={`font-regular
+        className={`font-regular cursor-pointer z-20
                     px-2 sm:px-3 xl:px-4 py-2 max-w-full sm:w-36 md:w-56 2xl:w-60 text-2xl transition-all
                     rounded overflow-hidden border-2 border-transparent
                     hover:shadow-light-xl

@@ -21,7 +21,7 @@ const ProjectLanding = ({ data }: Props) => {
     <>
       <div className=" grid grid-cols-12 mx-auto mt-8 text-left lg:mt-0 md:text-left mb-10 md:mb-0">
         <div className="px-5 order-last xl:order-first col-span-12 lg:col-span-12 xl:col-span-6 flex flex-col place-items-center items-center w-[100vw]">
-          <div className="items-center pl-10 xl:pl-0 justify-center w-full 2xl:w-3/4 -mt-10 relative">
+          <div className="items-center pl-10 xl:pl-0 justify-center w-full 2xl:w-3/4 -mt-10 relative z-10">
             <div
               className="relative h-auto py-10 lg:py-20 w-full"
               id="skills">
@@ -45,7 +45,7 @@ const ProjectLanding = ({ data }: Props) => {
                   <Button
                     type="solid"
                     text="Visit Project"
-                    onClickHandler={() => window.open(link, '_blank')}
+                    onClickHandler={() => window.open(link)}
                   />
                   {frontend_link && (
                     <div className="sm:col-span-1 xl:col-span-1 mt-2">
@@ -53,7 +53,7 @@ const ProjectLanding = ({ data }: Props) => {
                         type="outlined"
                         text="View on Github"
                         onClickHandler={() =>
-                          window.open(frontend_link, '_blank')
+                          window.open(frontend_link)
                         }
                       />
                     </div>
@@ -64,7 +64,7 @@ const ProjectLanding = ({ data }: Props) => {
                         type="outlined"
                         text="API Server"
                         onClickHandler={() =>
-                          window.open(backend_link, '_blank')
+                          window.open(backend_link)
                         }
                       />
                     </div>
@@ -74,7 +74,7 @@ const ProjectLanding = ({ data }: Props) => {
             </div>
           </div>
         </div>
-        <div className="col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-5">
+        <div className="col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-5 z-20">
           <Tilt>
             <div
               className="my-4 md:m-0 rounded-2xl px-10 md:px-5 pt-10 md:pt-2  justify-center
@@ -83,7 +83,7 @@ const ProjectLanding = ({ data }: Props) => {
                 <Image
                   src={urlFor(gallery[0])?.url()}
                   alt={title + ' ' + tagline}
-                  className="rounded-2xl !relative "
+                  className="rounded-2xl !relative object-contain"
                   fill
                 />
               </div>

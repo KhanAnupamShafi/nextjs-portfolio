@@ -18,7 +18,7 @@ export default function TechCard({
         </div>
         <div className="font-normal max-w-[390px] h-[184px]">
           <Image
-            className="!relative object-cover"
+            className="!relative object-contain"
             fill
             alt={heading}
             src={img}

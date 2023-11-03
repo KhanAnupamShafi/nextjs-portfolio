@@ -24,11 +24,11 @@ export default function Detail({ project }: Props): JSX.Element {
           <div className="col-span-12 md:col-span-12 lg:col-span-6 flex flex-col justify-center items-center">
             <iframe
               className="m-auto md:w-3/4 md:h-96 md:mx-auto md:text-center"
-              src={'https://bdbeponi.com/'}
+              src={project.video_link}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              title="kzilla"
+              title="video description"
             />
           </div>
         </div>

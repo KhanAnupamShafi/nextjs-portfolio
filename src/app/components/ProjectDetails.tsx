@@ -11,7 +11,7 @@ const ProjectDetails = ({ data }: Props) => {
     <div className="overflow-hidden">
       <ProjectLanding data={data} />
       <>
-        <div className="relative -mt-20">
+        <div className="relative -mt-20 -z-0">
           <div className="mt-24 md:mt-0 grid grid-cols-12 gap-4 place-items-center items-center h-screen">
             <div className="col-span-12 md:col-span-7 lg:col-span-6 flex flex-col justify-center items-center">
               {/* Hero Header */}
