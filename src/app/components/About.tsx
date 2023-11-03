@@ -13,6 +13,7 @@ const About = ({ info }: Props) => {
   const resume = myInfo?.socials?.find(
     (item) => item.title === 'Resume'
   );
+  console.log(myInfo);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -38,11 +39,7 @@ const About = ({ info }: Props) => {
               </h4>
             </div>
             <h5 className="text-lg font-serif italic sm:text-xl font-light text-blue dark:text-violet text-justify">
-              &ldquo;<q>A fresher with experience</q>, this line says
-              exactly who he is. He is a software developer who crafts
-              beautiful web and apps. His perfect balance of technical
-              &amp; managerial skills stands him apart from the
-              crowd.&rdquo;
+              &ldquo;{myInfo?.backgroundInformation}&rdquo;
             </h5>
             <div className="grid sm:grid-cols-2 md:grid-cols-none xl:grid-cols-2 gap-4 mt-6">
               <div className="sm:col-span-1 xl:col-span-1">
