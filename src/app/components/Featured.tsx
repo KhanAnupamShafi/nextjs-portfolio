@@ -53,11 +53,11 @@ const Featured = ({ projects }: Props) => {
       <div className="box">
         <h1 className="heading">Project Gallery</h1>
         <Swiper
-          // autoplay={{
-          //   delay: 2500,
-          //   disableOnInteraction: false,
-          //   reverseDirection: true,
-          // }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+            reverseDirection: true,
+          }}
           // direction="horizontal"
           spaceBetween={66}
           effect={'coverflow'}
@@ -150,14 +150,14 @@ const Featured = ({ projects }: Props) => {
           })}
 
           <div className="slider-controler">
-            <div className="swiper-button-prev slider-arrow text-[#0E1630]">
+            <div className="swiper-button-prev slider-arrow text-[#ffff] ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-6 h-6">
+                className="w-6 h-6 bg-slate-400 dark:bg-theme-light rounded-full">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -165,14 +165,14 @@ const Featured = ({ projects }: Props) => {
                 />
               </svg>
             </div>
-            <div className="swiper-button-next slider-arrow text-[#0E1630]">
+            <div className="swiper-button-next slider-arrow  text-[#fff]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-6 h-6">
+                className="w-6 h-6 bg-slate-400 dark:bg-theme-light rounded-full">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"

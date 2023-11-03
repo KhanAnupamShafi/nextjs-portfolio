@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="relative mx-auto py-2 text-white h-auto bg-transparent flex justify-center items-center">
       <hr className="w-1/5 sm:w-1/4 lg:w-96 border-pink" />
-      <p className="mx-3 md:mx-6 text-sm sm:text-2xl font-light m-auto">
+      <p className="mx-3 md:mx-6 text-sm sm:text-2xl text-rose-500 dark:text-white dark:font-light m-auto">
         Coding Your Vision into Reality
         <span
           role="img"
