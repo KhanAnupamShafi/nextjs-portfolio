@@ -7,12 +7,12 @@ type Props = {
 const SkillCard = ({ skill }: Props) => {
   return (
     <div className="relative group flex  cursor-pointer  ">
-      <div className="h-16 sm:h-16 w-28 bg-white">
+      <div className="h-16 sm:h-16 w-24 rounded-md opacity-80 bg-[#dee1ef]">
         <Image
           fill
           src={urlFor(skill.image).url()}
           alt={skill.title}
-          className="p-1 sm:px-3 border !relative w-full h-full border-gray-500 filter group-hover:grayscale transition duration-300 ease-in-out "
+          className="p-1 sm:px-3 border !relative rounded-md w-full h-full border-gray-500 filter group-hover:grayscale transition duration-300 ease-in-out object-contain"
         />
       </div>
       <div className="absolute opacity-0 group-hover:opacity-80 transition duration-200 ease-in-out group-hover:bg-white p-1 sm:px-4 h-16 sm:h-16 w-full border z-0">
