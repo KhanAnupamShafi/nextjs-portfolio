@@ -16,7 +16,6 @@ const ProjectLanding = ({ data }: Props) => {
     backend_link,
     gallery,
   } = data || {};
-  console.log(data);
   return (
     <>
       <div className=" grid grid-cols-12 mx-auto mt-8 text-left lg:mt-0 md:text-left mb-10 md:mb-0">

@@ -54,7 +54,7 @@ const Featured = ({ projects }: Props) => {
         <h1 className="heading">Project Gallery</h1>
         <Swiper
           autoplay={{
-            delay: 2500,
+            delay: 99999,
             disableOnInteraction: false,
             reverseDirection: true,
             pauseOnMouseEnter: true,
@@ -68,9 +68,11 @@ const Featured = ({ projects }: Props) => {
           breakpoints={{
             640: {
               slidesPerView: 2, // Display one slide on screens wider than 640px
+              autoplay: { delay: 2000 },
             },
             768: {
               slidesPerView: 3, // Display three slides on screens wider than 768px
+              autoplay: { delay: 2000 },
             },
           }}
           initialSlide={1}

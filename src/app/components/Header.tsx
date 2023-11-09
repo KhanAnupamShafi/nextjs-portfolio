@@ -2,6 +2,7 @@
 import styles from '@/styles/menu.module.css';
 import { Disclosure } from '@headlessui/react';
 import clsx from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -86,12 +87,18 @@ const Header = () => {
               <div className="flex justify-between w-full">
                 <div className="flex items-center">
                   <Link href="/">
-                    <h1 className="text-2xl font-medium">
-                      <span className="text-theme-light">K</span>han{' '}
-                      <span className="text-theme-light">A</span>
-                      nupam{' '}
-                      <span className="text-theme-light">S</span>hafi
-                    </h1>
+                    <div className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-green-200 to-white items-baseline">
+                      <Image
+                        src={'/favicon/favicon.ico'}
+                        className="text-theme-light inline-block align-bottom"
+                        alt="logo"
+                        width={35}
+                        height={85}
+                      />
+                      nupams
+                      <span className="text-theme-light pl-3">P</span>
+                      ortfolio
+                    </div>
                   </Link>
                 </div>
 
