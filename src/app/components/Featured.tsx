@@ -57,6 +57,7 @@ const Featured = ({ projects }: Props) => {
             delay: 2500,
             disableOnInteraction: false,
             reverseDirection: true,
+            pauseOnMouseEnter: true,
           }}
           // direction="horizontal"
           spaceBetween={66}
@@ -108,8 +109,8 @@ const Featured = ({ projects }: Props) => {
                   className={`object-contain h-full w-full top-0`}
                 />
                 <div className="w-10 absolute text-2xl -top-2 flex items-start justify-center rounded-3xl h-full z-2 cursor-pointer"></div>
-                <div className="absolute grid place-items-center text-2xl bottom-5 px-5 bg-[#291720b9]">
-                  <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#04A777] to-[#51FBC8]">
+                <div className="rounded-md -mt-16 grid place-items-center text-2xl bottom-5 px-5 bg-[#291720b9]">
+                  <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#fff] to-[#51FBC8]">
                     {project.title}
                   </h1>
                 </div>
@@ -118,13 +119,13 @@ const Featured = ({ projects }: Props) => {
                   <Link
                     href={`/my-projects/${project._id}`}
                     target="_blank"
-                    className="absolute flex items-center justify-center top-8 rounded-3xl overflow-hidden opacity-0 hover:opacity-100 bg-[#04A777]/60 transition-opacity duration-150 ease-in w-full h-full z-2 cursor-pointer">
+                    className="absolute flex items-center justify-center top-8 rounded-3xl overflow-hidden opacity-0 hover:opacity-90 bg-[#04A777]/60 transition-opacity duration-150 ease-in w-full h-full z-2 cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
-                      stroke="currentColor"
+                      stroke="white"
                       className="w-6 h-6">
                       <path
                         strokeLinecap="round"
@@ -136,7 +137,7 @@ const Featured = ({ projects }: Props) => {
                       {project?.technologies?.map((tech) => (
                         <div
                           key={tech?._id}
-                          className="px-1.5 py-1 mr-2 dark:text-white bg-[#291720] rounded-md my-0.5">
+                          className="px-1.5 py-1 mr-2 text-white bg-emerald-700 dark:bg-[#291720] rounded-md my-0.5">
                           {tech.title}
                         </div>
                       ))}
