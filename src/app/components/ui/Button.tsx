@@ -15,7 +15,7 @@ const Button = ({ text, type, onClickHandler }: Props) => {
                     hover:shadow-light-xl
                     ${
                       type === 'solid'
-                        ? 'bg-theme-light dark:bg-pink text-blue hover:outline-none hover:bg-transparent hover:text-white hover:border-pink focus:outline-none'
+                        ? 'bg-theme-light dark:bg-pink text-blue hover:outline-none hover:bg-transparent  dark:hover:text-white hover:border-pink focus:outline-none'
                         : 'text-pink bg-transparent border-pink hover:outline-none hover:bg-pink hover:text-blue hover:border-pink focus:outline-none'
                     }
                    `}>
